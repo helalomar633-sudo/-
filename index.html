@@ -82,13 +82,13 @@
             align-items: center;
             gap: 40px;
             padding: 50px 0;
-            flex-wrap: wrap; /* لضمان التجاوب على الشاشات الصغيرة */
+            flex-wrap: wrap;
         }
 
         .hero-img-container {
-            flex: 1; /* يأخذ مساحة مرنة */
-            min-width: 300px; /* أدنى عرض للصورة */
-            max-width: 500px; /* أقصى عرض للصورة */
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
         }
 
         .hero-img {
@@ -100,7 +100,7 @@
         }
 
         .hero-text {
-            flex: 1; /* يأخذ باقي المساحة */
+            flex: 1;
             min-width: 300px;
         }
 
@@ -213,11 +213,11 @@
         <section id="home" class="active">
             <div class="hero">
                 <div class="hero-img-container">
-                    <img src="https://i.postimg.cc/3Nc5TqG6/images-(1).jpg" alt="عمر هلال - مطور ويب" class="hero-img">
+                    <img src="https://i.postimg.cc/3Nc5TqG6/images-1.jpg" alt="عمر هلال - مطور ويب" class="hero-img">
                 </div>
                 <div class="hero-text">
-                    <h1>Hello,I am Omar Helal</h1>
-                    <span class="subtitle">web develope</span>
+                    <h1>Hello, I am Omar Helal</h1>
+                    <span class="subtitle">web developer</span>
                     <p>I am a web developer focused on turning ideas into fast, functional, and modern websites.</p>
                     <p>I care about clean design and a smooth user experience that helps businesses grow.</p>
                     <p>My goal is to deliver practical, high-quality work that builds a strong online presence.</p>
@@ -230,7 +230,7 @@
                 <h2>من نحن</h2>
                 <h3 style="color: var(--accent-color); margin: 20px 0;">عمر هلال</h3>
                 <p style="max-width: 700px; margin: 0 auto;">
-                    أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية المتكاملة. أسعى دائماً لتقديم منتجات وخدمات تساعد الأفراد والشركات على النمو والتطور في العالم الرقمي باستخدام أحدث التقنيات وبأفضل الأسعار التنافسية.
+                    أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية المتكاملة. أسعى دائماً لتقديم منتجات وخدمات تساعد الأفراد والشركات على النمو والتطور في العالم الرقمي.
                 </p>
             </div>
         </section>
@@ -262,7 +262,6 @@
     </div>
 
     <script>
-        // التنقل بين الصفحات
         function showSection(sectionId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
@@ -271,7 +270,6 @@
             document.getElementById('link-' + sectionId).classList.add('active');
         }
 
-        // بيانات الخدمات (10 خدمات)
         const servicesData = [
             { id: 1, title: "تصميم موقع احترافي", price: "50$", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
             { id: 2, title: "بوت واتساب ذكي", price: "30$", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
@@ -285,7 +283,6 @@
             { id: 10, title: "دعم فني وتطوير", price: "35$", img: "https://images.unsplash.com/photo-1573164773711-7302499ad571?w=400" },
         ];
 
-        // عرض الخدمات
         const container = document.getElementById('services-container');
         servicesData.forEach(service => {
             container.innerHTML += `
@@ -298,7 +295,6 @@
             `;
         });
 
-        // نظام المشتريات البسيط
         const purchased = [];
         function buyService(id) {
             const service = servicesData.find(s => s.id === id);
@@ -314,7 +310,6 @@
         function updatePurchasedUI() {
             const list = document.getElementById('purchased-list');
             const emptyMsg = document.getElementById('empty-cart');
-            
             if (purchased.length > 0) {
                 emptyMsg.style.display = 'none';
                 list.innerHTML = '';
