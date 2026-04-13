@@ -78,20 +78,50 @@
 
         /* الصفحة الرئيسية */
         .hero {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 40px;
             padding: 50px 0;
+            flex-wrap: wrap; /* لضمان التجاوب على الشاشات الصغيرة */
         }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+        .hero-img-container {
+            flex: 1; /* يأخذ مساحة مرنة */
+            min-width: 300px; /* أدنى عرض للصورة */
+            max-width: 500px; /* أقصى عرض للصورة */
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
             border: 4px solid var(--accent-color);
-            margin-bottom: 20px;
             object-fit: cover;
         }
 
-        h1 { color: var(--accent-color); margin-bottom: 10px; }
+        .hero-text {
+            flex: 1; /* يأخذ باقي المساحة */
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .hero-text .subtitle {
+            color: var(--gray-text);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
 
         /* الخدمات */
         .services-grid {
@@ -182,9 +212,16 @@
         
         <section id="home" class="active">
             <div class="hero">
-                <img src="https://via.placeholder.com/200" alt="صورة المستخدم" class="profile-img">
-                <h1>مرحباً بك في متجرنا الرقمي</h1>
-                <p>وجهتك الأولى لأفضل الحلول والمنتجات الرقمية المبتكرة.</p>
+                <div class="hero-img-container">
+                    <img src="https://via.placeholder.com/500x800?text=صورة+عمر+هلال" alt="عمر هلال - مطور ويب" class="hero-img">
+                </div>
+                <div class="hero-text">
+                    <h1>أهلاً، أنا عمر هلال</h1>
+                    <span class="subtitle">مطور ويب محترف</span>
+                    <p>أقوم بتحويل الأفكار المبتكرة إلى مواقع إلكترونية حقيقية، سريعة، وتعمل بكفاءة عالية.</p>
+                    <p>أركز بشكل أساسي على التصميم النظيف وتجربة المستخدم السهلة والبسيطة التي تساعد أي مشروع على النمو والنجاح.</p>
+                    <p>هدفي هو تقديم عمل عملي واحترافي يضمن لأي بيزنس الظهور بشكل قوي ومتميز أونلاين.</p>
+                </div>
             </div>
         </section>
 
@@ -193,7 +230,7 @@
                 <h2>من نحن</h2>
                 <h3 style="color: var(--accent-color); margin: 20px 0;">عمر هلال</h3>
                 <p style="max-width: 700px; margin: 0 auto;">
-                    أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية. أسعى دائماً لتقديم منتجات تساعد الأفراد والشركات على النمو في العالم الرقمي بأحدث التقنيات وأفضل الأسعار.
+                    أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية المتكاملة. أسعى دائماً لتقديم منتجات وخدمات تساعد الأفراد والشركات على النمو والتطور في العالم الرقمي باستخدام أحدث التقنيات وبأفضل الأسعار التنافسية.
                 </p>
             </div>
         </section>
