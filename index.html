@@ -123,6 +123,24 @@
             color: var(--text-color);
         }
 
+        /* أيقونات التواصل الاجتماعي */
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
         /* الخدمات */
         .services-grid {
             display: grid;
@@ -196,12 +214,12 @@
             margin: 15px 0;
         }
 
-        /* تعديل صفحة من نحن لتناسب الصورة على اليمين */
+        /* تعديل صفحة من نحن */
         .about-content {
             display: flex;
             align-items: center;
             gap: 40px;
-            flex-wrap: wrap-reverse; /* لضمان الترتيب الصحيح في الموبايل */
+            flex-wrap: wrap-reverse;
             text-align: right;
         }
 
@@ -246,6 +264,13 @@
                     <p>I am a web developer focused on turning ideas into fast, functional, and modern websites.</p>
                     <p>I care about clean design and a smooth user experience that helps businesses grow.</p>
                     <p>My goal is to deliver practical, high-quality work that builds a strong online presence.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/201221546924" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com" target="_blank" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="انستجرام"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -260,15 +285,14 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://i.postimg.cc/ZYMS53m0/141.web" alt="عن عمر هلال">
+                    <img src="https://i.postimg.cc/ZYMS53m0/141.webp" alt="عن عمر هلال">
                 </div>
             </div>
         </section>
 
         <section id="services">
             <h2 style="text-align: center;">خدماتنا المميزة</h2>
-            <div class="services-grid" id="services-container">
-                </div>
+            <div class="services-grid" id="services-container"></div>
         </section>
 
         <section id="orders">
