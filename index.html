@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عمر هلال - مطور ويب محترف</title>
+    <title>Omar Helal - Professional Web Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --main-bg: #0a0a0a;
             --card-bg: #111111;
-            --accent-color: #00ff41; /* أخضر ماتريكس */
+            --accent-color: #00ff41; /* Matrix Green */
             --text-color: #ffffff;
             --gray-text: #b0b0b0;
         }
@@ -179,7 +179,7 @@
             border: 1px solid #444;
         }
 
-        .chip i { color: var(--accent-color); margin-left: 8px; }
+        .chip i { color: var(--accent-color); margin-right: 8px; }
 
         /* Services Grid */
         .services-grid {
@@ -253,6 +253,12 @@
             margin: 20px 0;
         }
 
+        #empty-cart {
+            text-align: center;
+            padding: 50px;
+            color: var(--gray-text);
+        }
+
         @media (max-width: 768px) {
             .about-grid { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 2rem; }
@@ -262,11 +268,11 @@
 <body>
 
     <nav>
-        <a onclick="showSection('home')" id="link-home" class="active">الرئيسية</a>
-        <a onclick="showSection('about')" id="link-about">من نحن</a>
-        <a onclick="showSection('services')" id="link-services">الخدمات</a>
-        <a onclick="showSection('orders')" id="link-orders">المشتريات</a>
-        <a onclick="showSection('contact')" id="link-contact">تواصل معي</a>
+        <a onclick="showSection('home')" id="link-home" class="active">Home</a>
+        <a onclick="showSection('about')" id="link-about">About Us</a>
+        <a onclick="showSection('services')" id="link-services">Services</a>
+        <a onclick="showSection('orders')" id="link-orders">Orders</a>
+        <a onclick="showSection('contact')" id="link-contact">Contact Me</a>
     </nav>
 
     <div class="container">
@@ -274,28 +280,28 @@
         <section id="home" class="active">
             <div class="hero">
                 <div class="hero-img-container">
-                    <img src="https://i.postimg.cc/3Nc5TqG6/images-1.jpg" alt="عمر هلال" class="hero-img">
+                    <img src="https://i.postimg.cc/3Nc5TqG6/images-1.jpg" alt="Omar Helal" class="hero-img">
                 </div>
                 <div class="hero-text">
-                    <h1>أهلاً، أنا عمر هلال</h1>
-                    <span class="subtitle">مطور ويب محترف</span>
-                    <p>أحول الأفكار لمواقع حقيقية وسريعة تشتغل بكفاءة. بركز على تصميم نظيف وتجربة مستخدم سهلة تساعد أي مشروع يكبر.</p>
-                    <p>هدفي أقدم شغل عملي واحترافي يخلي أي بيزنس يظهر بشكل قوي أونلاين.</p>
+                    <h1>Hi, I'm Omar Helal</h1>
+                    <span class="subtitle">Professional Web Developer</span>
+                    <p>I turn ideas into real, fast, and efficient websites. I focus on clean design and smooth user experiences that help any business grow.</p>
+                    <p>My goal is to provide practical and professional work that gives any business a strong online presence.</p>
                     
                     <a href="https://wa.me/201221546924" class="cta-button">
-                        <i class="fas fa-paper-plane"></i> وظفني الآن
+                        <i class="fas fa-paper-plane"></i> Hire Me Now
                     </a>
                 </div>
             </div>
         </section>
 
         <section id="about">
-            <h2 style="text-align: center; margin-bottom: 40px;">من نحن</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;">About Us</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <h3 style="color: var(--accent-color);">عمر هلال</h3>
+                    <h3 style="color: var(--accent-color);">Omar Helal</h3>
                     <p style="margin: 15px 0; color: var(--gray-text);">
-                        متخصص في تطوير الحلول الرقمية، بخبرة تركز على دمج الأداء القوي مع التصاميم العصرية. أؤمن أن الموقع ليس مجرد كود، بل هو واجهة لنجاحك.
+                        Specialist in developing digital solutions, with a focus on merging powerful performance with modern designs. I believe a website is not just code, but the gateway to your success.
                     </p>
                     
                     <div class="skills-chips">
@@ -310,42 +316,42 @@
                     <div class="stats-container">
                         <div class="stat-card">
                             <h4>15+</h4>
-                            <p>مشروع منجز</p>
+                            <p>Projects Done</p>
                         </div>
                         <div class="stat-card">
                             <h4>10+</h4>
-                            <p>عملاء سعداء</p>
+                            <p>Happy Clients</p>
                         </div>
                         <div class="stat-card">
                             <h4>24/7</h4>
-                            <p>دعم فني</p>
+                            <p>Tech Support</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://i.postimg.cc/ZYMS53m0/141.webp" alt="حول عمر هلال" style="width: 100%; border-radius: 15px; border: 1px solid var(--accent-color);">
+                    <img src="https://i.postimg.cc/ZYMS53m0/141.webp" alt="About Omar Helal" style="width: 100%; border-radius: 15px; border: 1px solid var(--accent-color);">
                 </div>
             </div>
         </section>
 
         <section id="services">
-            <h2 style="text-align: center;">خدماتنا المميزة</h2>
+            <h2 style="text-align: center;">Our Premium Services</h2>
             <div class="services-grid" id="services-container"></div>
         </section>
 
         <section id="orders">
-            <h2 style="text-align: center;">سجل المشتريات</h2>
+            <h2 style="text-align: center;">Order History</h2>
             <div id="empty-cart">
                 <i class="fas fa-shopping-basket fa-3x"></i>
-                <p>لا توجد مشتريات حالياً.</p>
+                <p>No purchases yet.</p>
             </div>
             <div id="purchased-list" class="services-grid"></div>
         </section>
 
         <section id="contact">
             <div class="contact-card">
-                <h2>ابدأ مشروعك اليوم</h2>
-                <p>يسعدني تحويل رؤيتك إلى واقع ملموس</p>
+                <h2>Start Your Project Today</h2>
+                <p>I would be happy to turn your vision into reality</p>
                 <a href="https://wa.me/201221546924"><i class="fab fa-whatsapp"></i> 01221546924</a>
                 <a href="mailto:helalomar633@gmail.com"><i class="far fa-envelope"></i> helalomar633@gmail.com</a>
                 <div class="skills-chips" style="justify-content: center; margin-top: 20px;">
@@ -368,12 +374,12 @@
         }
 
         const servicesData = [
-            { id: 1, title: "تصميم موقع احترافي", price: "50$", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
-            { id: 2, title: "بوت واتساب ذكي", price: "30$", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
-            { id: 3, title: "دورة تعلم البرمجة", price: "25$", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400" },
-            { id: 4, title: "نظام إدارة مبيعات", price: "100$", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-            { id: 5, title: "تصميم هوية بصرية", price: "40$", img: "https://i.postimg.cc/wML8rfGQ/Basma.webp" },
-            { id: 10, title: "دعم فني وتطوير", price: "35$", img: "https://i.postimg.cc/Cx9JQhbJ/Technical-Support-ald-m-alfny.jpg" },
+            { id: 1, title: "Professional Web Design", price: "$50", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
+            { id: 2, title: "Smart WhatsApp Bot", price: "$30", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
+            { id: 3, title: "Programming Course", price: "$25", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400" },
+            { id: 4, title: "Sales Management System", price: "$100", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
+            { id: 5, title: "Visual Identity Design", price: "$40", img: "https://i.postimg.cc/wML8rfGQ/Basma.webp" },
+            { id: 10, title: "Tech Support & Dev", price: "$35", img: "https://i.postimg.cc/Cx9JQhbJ/Technical-Support-ald-m-alfny.jpg" },
         ];
 
         const container = document.getElementById('services-container');
@@ -383,7 +389,7 @@
                     <img src="${service.img}" alt="${service.title}">
                     <h3>${service.title}</h3>
                     <span class="price">${service.price}</span>
-                    <button class="buy-btn" onclick="buyService(${service.id})">اطلب الخدمة</button>
+                    <button class="buy-btn" onclick="buyService(${service.id})">Order Service</button>
                 </div>
             `;
         });
@@ -394,9 +400,9 @@
             if (!purchased.includes(service)) {
                 purchased.push(service);
                 updatePurchasedUI();
-                alert('تمت إضافة ' + service.title + ' لسجل طلباتك');
+                alert(service.title + ' has been added to your order history');
             } else {
-                alert('هذا المنتج موجود بالفعل في سجل طلباتك');
+                alert('This product is already in your order history');
             }
         }
 
@@ -411,7 +417,7 @@
                         <div class="service-card">
                             <img src="${item.img}" alt="${item.title}">
                             <h3>${item.title}</h3>
-                            <span style="color: var(--accent-color)">قيد المراجعة ✅</span>
+                            <span style="color: var(--accent-color)">Under Review ✅</span>
                         </div>
                     `;
                 });
