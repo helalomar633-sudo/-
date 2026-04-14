@@ -58,35 +58,41 @@
         /* Hero Section */
         .hero { display: flex; align-items: center; gap: 40px; padding: 60px 0; flex-wrap: wrap; }
         .hero-text { flex: 1.2; min-width: 300px; }
-        .hero-text h1 { color: var(--accent-color); font-size: 3rem; margin-bottom: 15px; }
+        .hero-text h1 { color: var(--accent-color); font-size: 3rem; margin-bottom: 10px; }
+        .hero-text h2 { font-size: 1.8rem; margin-bottom: 20px; color: #fff; }
         .hero-img-container { flex: 1; min-width: 300px; text-align: center; }
-        .hero-img { width: 100%; max-width: 350px; border-radius: 20px; border: 3px solid var(--accent-color); }
+        .hero-img { width: 100%; max-width: 350px; border-radius: 20px; border: 3px solid var(--accent-color); box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }
 
         /* Social Icons */
         .social-links { display: flex; gap: 20px; margin-top: 25px; font-size: 1.5rem; }
         .social-links a { color: var(--text-color); transition: 0.3s; }
         .social-links a:hover { color: var(--accent-color); transform: translateY(-5px); }
 
+        /* About Section Adjusted */
+        .about-flex { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        .about-text { flex: 1.5; min-width: 300px; text-align: left; color: var(--gray-text); font-size: 1.1rem; }
+        .about-img-side { flex: 1; min-width: 300px; }
+        .about-img-side img { width: 100%; border-radius: 15px; border: 1px solid var(--accent-color); }
+
         /* Grid Layouts */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        
         .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; transition: 0.3s; padding: 20px; text-align: center; }
         .card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; background: #222; }
 
         .price { display: block; color: var(--accent-color); font-size: 1.4rem; font-weight: bold; margin: 15px 0; }
         .buy-btn { background: var(--accent-color); color: #000; width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .buy-btn:hover { opacity: 0.8; box-shadow: 0 0 15px var(--accent-color); }
 
-        /* About Us Content */
-        .about-content { display: flex; flex-direction: column; gap: 20px; font-size: 1.1rem; color: var(--gray-text); }
-        .about-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; border: 1px solid var(--accent-color); }
-
         /* Status Bar for Purchases */
         .status-container { background: #222; height: 8px; border-radius: 10px; margin: 15px 0; }
         .status-bar { background: var(--accent-color); height: 100%; border-radius: 10px; width: 25%; }
 
-        @media (max-width: 768px) { .hero { text-align: center; justify-content: center; } .social-links { justify-content: center; } }
+        @media (max-width: 768px) { 
+            .hero, .about-flex { text-align: center; justify-content: center; } 
+            .about-text { text-align: center; }
+            .social-links { justify-content: center; } 
+        }
     </style>
 </head>
 <body>
@@ -105,14 +111,14 @@
             <div class="hero">
                 <div class="hero-text">
                     <h1>Hi, I'm Omar Helal</h1>
-                    <h3 style="color: var(--gray-text); margin-bottom: 20px;">Turning Digital Visions Into Reality</h3>
-                    <p>I specialize in building high-performance websites and digital solutions that help businesses grow. With a focus on clean code and user-centric design, I ensure your online presence is both professional and effective.</p>
+                    <h2>Professional Web Developer</h2>
+                    <p>I specialize in building modern, responsive, and high-performance websites that help businesses grow online. From clean front-end interfaces to efficient back-end solutions, I create seamless digital experiences focused on performance, usability, and real results.</p>
                     
                     <div class="social-links">
                         <a href="https://wa.me/201221546924" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/yourusername" target="_blank"><i class="fab fa-telegram"></i></a>
-                        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="hero-img-container">
@@ -122,22 +128,25 @@
         </section>
 
         <section id="about">
-            <h2 style="text-align: center; color: var(--accent-color); margin-bottom: 30px;">About Me & My Vision</h2>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000" alt="Web Development" class="about-image">
-            <div class="about-content">
-                <p>
-                    I am a dedicated web developer with a passion for creating innovative digital experiences. My journey in technology is driven by a commitment to excellence and a desire to help businesses navigate the digital landscape effectively. I believe that a website is more than just a page; it is a powerful tool for communication, branding, and growth that requires precision and creativity.
-                </p>
-                <p>
-                    My approach combines technical expertise with a deep understanding of client needs to deliver tailor-made solutions. I stay updated with the latest industry trends and technologies to ensure that every project I undertake is modern, secure, and scalable. Whether it is a simple landing page or a complex web application, my goal is to provide value that exceeds expectations and builds long-term success.
-                </p>
+            <h2 style="text-align: center; color: var(--accent-color); margin-bottom: 10px;">Who We Are</h2>
+            <div class="about-flex">
+                <div class="about-text">
+                    <p style="margin-bottom: 15px;">
+                        We are a dedicated web development team focused on creating modern, responsive, and high-quality websites. Our goal is to help businesses build a strong digital presence through clean design and efficient performance. We believe that every project should combine creativity with functionality. That’s why we pay attention to every detail to deliver a seamless user experience.
+                    </p>
+                    <p>
+                        We work closely with our clients to understand their needs and turn their ideas into real digital solutions. From simple websites to advanced web applications, we ensure speed, security, and scalability. Our mission is to provide reliable services that drive growth and success. We are committed to delivering results that exceed expectations.
+                    </p>
+                </div>
+                <div class="about-img-side">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Our Team Workspace">
+                </div>
             </div>
         </section>
 
         <section id="services">
             <h2 style="text-align: center; margin-bottom: 30px;">Our Premium Services</h2>
-            <div class="grid" id="services-container">
-                </div>
+            <div class="grid" id="services-container"></div>
         </section>
 
         <section id="purchases">
@@ -161,12 +170,6 @@
                     <p style="font-size: 1.2rem;">
                         <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i> +201221546924
                     </p>
-                </div>
-
-                <div class="social-links" style="justify-content: center;">
-                    <a href="https://t.me/yourusername"><i class="fab fa-telegram"></i></a>
-                    <a href="https://instagram.com/yourusername"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </section>
@@ -192,12 +195,7 @@
             { id: 7, title: "Python Automation", price: "$80", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400" },
             { id: 8, title: "Blog Setup", price: "$35", img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400" },
             { id: 9, title: "Logo Branding", price: "$25", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?w=400" },
-            { id: 10, title: "App Maintenance", price: "$100", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-            { id: 11, title: "Security Audit", price: "$90", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400" },
-            { id: 12, title: "Email Marketing", price: "$40", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400" },
-            { id: 13, title: "Bug Fixing", price: "$20", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400" },
-            { id: 14, title: "API Integration", price: "$70", img: "https://images.unsplash.com/photo-1518433278988-c92da84cd3e9?w=400" },
-            { id: 15, title: "Cloud Hosting", price: "$55", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400" }
+            { id: 10, title: "App Maintenance", price: "$100", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" }
         ];
 
         const container = document.getElementById('services-container');
