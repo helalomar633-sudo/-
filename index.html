@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Helal - Professional Web Developer</title>
+    <title>عمر هلال | مطور ويب محترف</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --main-bg: #0a0a0a;
             --card-bg: #111111;
-            --accent-color: #00ff41; /* Matrix Green */
+            --accent-color: #00ff41; 
             --text-color: #ffffff;
             --gray-text: #b0b0b0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--main-bg); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: var(--main-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Nav Bar */
+        /* Navigation */
         nav {
             background: rgba(0, 0, 0, 0.95);
             padding: 1rem;
@@ -39,325 +28,156 @@
             border-bottom: 2px solid var(--accent-color);
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
-            padding: 5px 12px;
+            padding: 5px 10px;
             transition: 0.3s;
             cursor: pointer;
             font-size: 0.9rem;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--accent-color);
-        }
+        nav a:hover, nav a.active { color: var(--accent-color); }
 
-        .container {
-            margin-top: 100px;
-            padding: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .container { margin-top: 120px; padding: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
-        section {
-            display: none;
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        section.active {
-            display: block;
-        }
+        section { display: none; animation: fadeIn 0.6s ease-out; }
+        section.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section (Home) */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            padding: 40px 0;
-            flex-wrap: wrap;
-        }
+        /* Hero Section */
+        .hero { display: flex; align-items: center; gap: 40px; padding: 40px 0; flex-wrap: wrap-reverse; }
+        .hero-text { flex: 1.2; min-width: 300px; }
+        .hero-text h1 { color: var(--accent-color); font-size: 2.5rem; margin-bottom: 15px; }
+        .hero-img-container { flex: 1; min-width: 300px; text-align: center; }
+        .hero-img { width: 100%; max-width: 350px; border-radius: 20px; border: 3px solid var(--accent-color); box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }
 
-        .hero-img-container {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .portfolio-item { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .portfolio-item:hover { border-color: var(--accent-color); transform: scale(1.02); }
+        .portfolio-item img { width: 100%; height: 200px; object-fit: cover; }
+        .portfolio-info { padding: 15px; }
+        .portfolio-links { display: flex; gap: 10px; margin-top: 10px; }
+        .portfolio-links a { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--accent-color); padding: 4px 10px; border-radius: 5px; }
 
-        .hero-img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-        }
+        /* Status Bar */
+        .status-container { margin-top: 15px; background: #222; height: 8px; border-radius: 10px; position: relative; }
+        .status-bar { background: var(--accent-color); height: 100%; border-radius: 10px; width: 40%; box-shadow: 0 0 10px var(--accent-color); }
+        .status-text { font-size: 0.75rem; color: var(--accent-color); display: block; margin-top: 5px; }
 
-        .hero-text {
-            flex: 1.2;
-            min-width: 300px;
-        }
+        /* Buttons & Chips */
+        .cta-button { display: inline-block; background: var(--accent-color); color: #000; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .cta-button:hover { box-shadow: 0 0 15px var(--accent-color); transform: translateY(-3px); }
+        
+        .skills-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: center; }
+        .chip { background: #1a1a1a; padding: 8px 15px; border-radius: 20px; border: 1px solid #333; font-size: 0.9rem; }
+        .chip i { color: var(--accent-color); margin-left: 8px; }
 
-        .hero-text h1 {
-            color: var(--accent-color);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+        .service-card { background: var(--card-bg); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #222; }
+        .price { display: block; color: var(--accent-color); font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
+        .buy-btn { background: var(--accent-color); width: 100%; padding: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
-        .hero-text .subtitle {
-            font-size: 1.4rem;
-            color: var(--gray-text);
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-color);
-            color: #000;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-            border: 2px solid var(--accent-color);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color);
-        }
-
-        /* About Section Improvements */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .stat-card h4 { font-size: 1.8rem; color: var(--accent-color); }
-        .stat-card p { font-size: 0.8rem; color: var(--gray-text); }
-
-        .skills-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .chip {
-            background: #222;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid #444;
-        }
-
-        .chip i { color: var(--accent-color); margin-right: 8px; }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: 0.4s;
-        }
-
-        .service-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-10px);
-            background: #1a1a1a;
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 180px;
-            border-radius: 10px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            display: block;
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            margin: 15px 0;
-            font-weight: 800;
-        }
-
-        .buy-btn {
-            background: var(--accent-color);
-            color: #000;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        .buy-btn:hover { opacity: 0.8; }
-
-        /* Contact Section */
-        .contact-card {
-            background: var(--card-bg);
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-
-        .contact-card a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 1.4rem;
-            display: block;
-            margin: 20px 0;
-        }
-
-        #empty-cart {
-            text-align: center;
-            padding: 50px;
-            color: var(--gray-text);
-        }
-
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .hero-text h1 { font-size: 2rem; }
-        }
+        @media (max-width: 768px) { .hero { text-align: center; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a onclick="showSection('home')" id="link-home" class="active">Home</a>
-        <a onclick="showSection('about')" id="link-about">About Us</a>
-        <a onclick="showSection('services')" id="link-services">Services</a>
-        <a onclick="showSection('orders')" id="link-orders">Orders</a>
-        <a onclick="showSection('contact')" id="link-contact">Contact Me</a>
+        <a onclick="showSection('home')" id="link-home" class="active">الرئيسية</a>
+        <a onclick="showSection('portfolio')" id="link-portfolio">أعمالي</a>
+        <a onclick="showSection('services')" id="link-services">خدماتي</a>
+        <a onclick="showSection('orders')" id="link-orders">طلباتي</a>
+        <a onclick="showSection('contact')" id="link-contact">تواصل معي</a>
     </nav>
 
     <div class="container">
         
         <section id="home" class="active">
             <div class="hero">
-                <div class="hero-img-container">
-                    <img src="https://i.postimg.cc/3Nc5TqG6/images-1.jpg" alt="Omar Helal" class="hero-img">
-                </div>
                 <div class="hero-text">
-                    <h1>Hi, I'm Omar Helal</h1>
-                    <span class="subtitle">Professional Web Developer</span>
-                    <p>I turn ideas into real, fast, and efficient websites. I focus on clean design and smooth user experiences that help any business grow.</p>
-                    <p>My goal is to provide practical and professional work that gives any business a strong online presence.</p>
-                    
-                    <a href="https://wa.me/201221546924" class="cta-button">
-                        <i class="fas fa-paper-plane"></i> Hire Me Now
-                    </a>
+                    <h1>أهلاً، أنا عمر هلال</h1>
+                    <h3 style="color: var(--gray-text); margin-bottom: 20px;">مطور ويب أحول الأفكار لواقع ملموس</h3>
+                    <p>أنا مطور ويب أحول الأفكار لمواقع حقيقية وسريعة تشتغل بكفاءة. بركز على تصميم نظيف وتجربة مستخدم سهلة تساعد أي مشروع يكبر. هدفي أقدم شغل عملي واحترافي يخلي أي بيزنس يظهر بشكل قوي أونلاين.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a onclick="showSection('portfolio')" class="cta-button">عرض أعمالي</a>
+                        <a href="https://wa.me/201221546924" class="cta-button" style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);">تواصل معي</a>
+                    </div>
                 </div>
+                <div class="hero-img-container">
+                    <img src="https://i.postimg.cc/3Nc5TqG6/images-1.jpg" alt="عمر هلال" class="hero-img">
+                </div>
+            </div>
+            
+            <div class="skills-chips">
+                <span class="chip"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="chip"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="chip"><i class="fab fa-python"></i> Python</span>
+                <span class="chip"><i class="fab fa-github"></i> GitHub</span>
             </div>
         </section>
 
-        <section id="about">
-            <h2 style="text-align: center; margin-bottom: 40px;">About Us</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3 style="color: var(--accent-color);">Omar Helal</h3>
-                    <p style="margin: 15px 0; color: var(--gray-text);">
-                        Specialist in developing digital solutions, with a focus on merging powerful performance with modern designs. I believe a website is not just code, but the gateway to your success.
-                    </p>
-                    
-                    <div class="skills-chips">
-                        <span class="chip"><i class="fab fa-html5"></i> HTML5</span>
-                        <span class="chip"><i class="fab fa-css3-alt"></i> CSS3</span>
-                        <span class="chip"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="chip"><i class="fab fa-python"></i> Python/Django</span>
-                        <span class="chip"><i class="fas fa-database"></i> SQL</span>
-                        <span class="chip"><i class="fab fa-git-alt"></i> GitHub</span>
-                    </div>
-
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <h4>15+</h4>
-                            <p>Projects Done</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>10+</h4>
-                            <p>Happy Clients</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>24/7</h4>
-                            <p>Tech Support</p>
+        <section id="portfolio">
+            <h2 style="text-align: center; color: var(--accent-color);">معرض الأعمال</h2>
+            <p style="text-align: center; color: var(--gray-text);">نماذج من المشاريع التي قمت بتنفيذها</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="مشروع 1">
+                    <div class="portfolio-info">
+                        <h3>نظام إدارة المبيعات</h3>
+                        <p style="font-size: 0.85rem; color: var(--gray-text);">نظام متكامل لتتبع المبيعات والتقارير اليومية.</p>
+                        <div class="portfolio-links">
+                            <a href="#"><i class="fas fa-eye"></i> معاينة</a>
+                            <a href="#"><i class="fab fa-github"></i> الكود</a>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://i.postimg.cc/ZYMS53m0/141.webp" alt="About Omar Helal" style="width: 100%; border-radius: 15px; border: 1px solid var(--accent-color);">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500" alt="مشروع 2">
+                    <div class="portfolio-info">
+                        <h3>منصة شفائي</h3>
+                        <p style="font-size: 0.85rem; color: var(--gray-text);">موقع لحجز المواعيد الطبية وإدارة العيادات.</p>
+                        <div class="portfolio-links">
+                            <a href="#"><i class="fas fa-eye"></i> معاينة</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="services">
-            <h2 style="text-align: center;">Our Premium Services</h2>
-            <div class="services-grid" id="services-container"></div>
+            <h2 style="text-align: center; margin-bottom: 30px;">خدماتنا الرقمية</h2>
+            <div class="portfolio-grid" id="services-container"></div>
         </section>
 
         <section id="orders">
-            <h2 style="text-align: center;">Order History</h2>
-            <div id="empty-cart">
-                <i class="fas fa-shopping-basket fa-3x"></i>
-                <p>No purchases yet.</p>
+            <h2 style="text-align: center;">تتبع طلباتك</h2>
+            <div id="empty-cart" style="text-align: center; padding: 50px;">
+                <i class="fas fa-box-open fa-3x" style="color: #333;"></i>
+                <p>لا توجد طلبات نشطة حالياً</p>
             </div>
-            <div id="purchased-list" class="services-grid"></div>
+            <div id="purchased-list" class="portfolio-grid"></div>
         </section>
 
         <section id="contact">
-            <div class="contact-card">
-                <h2>Start Your Project Today</h2>
-                <p>I would be happy to turn your vision into reality</p>
-                <a href="https://wa.me/201221546924"><i class="fab fa-whatsapp"></i> 01221546924</a>
-                <a href="mailto:helalomar633@gmail.com"><i class="far fa-envelope"></i> helalomar633@gmail.com</a>
-                <div class="skills-chips" style="justify-content: center; margin-top: 20px;">
-                    <a href="#" style="font-size: 1.5rem; color: #fff; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="font-size: 1.5rem; color: #fff; margin: 0 10px;"><i class="fab fa-github"></i></a>
-                </div>
+            <div style="background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #222;">
+                <h2>ابدأ مشروعك الآن</h2>
+                <p style="margin: 15px 0;">جاهز لتحويل رؤيتك إلى واقع رقمي مبهر</p>
+                <a href="https://wa.me/201221546924" style="color: var(--accent-color); font-size: 1.8rem; text-decoration: none; display: block; margin: 20px 0;">
+                    <i class="fab fa-whatsapp"></i> 01221546924
+                </a>
+                <p>helalomar633@gmail.com</p>
             </div>
         </section>
 
@@ -367,29 +187,25 @@
         function showSection(sectionId) {
             document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-            
             document.getElementById(sectionId).classList.add('active');
             document.getElementById('link-' + sectionId).classList.add('active');
             window.scrollTo(0,0);
         }
 
         const servicesData = [
-            { id: 1, title: "Professional Web Design", price: "$50", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
-            { id: 2, title: "Smart WhatsApp Bot", price: "$30", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
-            { id: 3, title: "Programming Course", price: "$25", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400" },
-            { id: 4, title: "Sales Management System", price: "$100", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-            { id: 5, title: "Visual Identity Design", price: "$40", img: "https://i.postimg.cc/wML8rfGQ/Basma.webp" },
-            { id: 10, title: "Tech Support & Dev", price: "$35", img: "https://i.postimg.cc/Cx9JQhbJ/Technical-Support-ald-m-alfny.jpg" },
+            { id: 1, title: "تصميم موقع احترافي", price: "50$", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
+            { id: 2, title: "بوت واتساب ذكي", price: "30$", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
+            { id: 4, title: "نظام إدارة مبيعات", price: "100$", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" }
         ];
 
         const container = document.getElementById('services-container');
         servicesData.forEach(service => {
             container.innerHTML += `
                 <div class="service-card">
-                    <img src="${service.img}" alt="${service.title}">
-                    <h3>${service.title}</h3>
+                    <img src="${service.img}" alt="${service.title}" style="width:100%; border-radius:10px; height:150px; object-fit:cover;">
+                    <h3 style="margin-top:15px;">${service.title}</h3>
                     <span class="price">${service.price}</span>
-                    <button class="buy-btn" onclick="buyService(${service.id})">Order Service</button>
+                    <button class="buy-btn" onclick="buyService(${service.id})">اطلب الخدمة الآن</button>
                 </div>
             `;
         });
@@ -400,9 +216,9 @@
             if (!purchased.includes(service)) {
                 purchased.push(service);
                 updatePurchasedUI();
-                alert(service.title + ' has been added to your order history');
+                alert('تم إضافة ' + service.title + ' إلى طلباتك بنجاح');
             } else {
-                alert('This product is already in your order history');
+                alert('هذا الطلب موجود بالفعل في قائمتك');
             }
         }
 
@@ -414,10 +230,13 @@
                 list.innerHTML = '';
                 purchased.forEach(item => {
                     list.innerHTML += `
-                        <div class="service-card">
-                            <img src="${item.img}" alt="${item.title}">
+                        <div class="service-card" style="text-align:right;">
                             <h3>${item.title}</h3>
-                            <span style="color: var(--accent-color)">Under Review ✅</span>
+                            <div class="status-container">
+                                <div class="status-bar" style="width: 35%;"></div>
+                            </div>
+                            <span class="status-text"><i class="fas fa-sync-alt fa-spin"></i> جاري التجهيز (35%)...</span>
+                            <p style="font-size:0.8rem; margin-top:10px; color:var(--gray-text);">سيتم التواصل معك عبر واتساب لبدء التنفيذ.</p>
                         </div>
                     `;
                 });
