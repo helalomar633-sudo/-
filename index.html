@@ -196,6 +196,31 @@
             margin: 15px 0;
         }
 
+        /* تعديل صفحة من نحن لتناسب الصورة على اليمين */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap-reverse; /* لضمان الترتيب الصحيح في الموبايل */
+            text-align: right;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
     </style>
 </head>
 <body>
@@ -226,12 +251,17 @@
         </section>
 
         <section id="about">
-            <div style="text-align: center;">
-                <h2>من نحن</h2>
-                <h3 style="color: var(--accent-color); margin: 20px 0;">عمر هلال</h3>
-                <p style="max-width: 700px; margin: 0 auto;">
-                    أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية المتكاملة. أسعى دائماً لتقديم منتجات وخدمات تساعد الأفراد والشركات على النمو والتطور في العالم الرقمي.
-                </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>من نحن</h2>
+                    <h3 style="color: var(--accent-color); margin: 20px 0;">عمر هلال</h3>
+                    <p>
+                        أنا عمر هلال، متخصص في تقديم الحلول الرقمية والبرمجية المتكاملة. أسعى دائماً لتقديم منتجات وخدمات تساعد الأفراد والشركات على النمو والتطور في العالم الرقمي.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.postimg.cc/ZYMS53m0/141.web" alt="عن عمر هلال">
+                </div>
             </div>
         </section>
 
@@ -275,12 +305,12 @@
             { id: 2, title: "بوت واتساب ذكي", price: "30$", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
             { id: 3, title: "دورة تعلم البرمجة", price: "25$", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400" },
             { id: 4, title: "نظام إدارة مبيعات", price: "100$", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-            { id: 5, title: "تصميم هوية بصرية", price: "40$", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?w=400" },
+            { id: 5, title: "تصميم هوية بصرية", price: "40$", img: "https://i.postimg.cc/wML8rfGQ/Basma.webp" },
             { id: 6, title: "سيرفرات استضافة", price: "15$", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400" },
             { id: 7, title: "تطوير تطبيقات أندرويد", price: "120$", img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400" },
             { id: 8, title: "خدمات تسويق إلكتروني", price: "60$", img: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400" },
             { id: 9, title: "كتابة محتوى تقني", price: "20$", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400" },
-            { id: 10, title: "دعم فني وتطوير", price: "35$", img: "https://images.unsplash.com/photo-1573164773711-7302499ad571?w=400" },
+            { id: 10, title: "دعم فني وتطوير", price: "35$", img: "https://i.postimg.cc/Cx9JQhbJ/Technical-Support-ald-m-alfny.jpg" },
         ];
 
         const container = document.getElementById('services-container');
